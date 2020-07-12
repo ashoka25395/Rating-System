@@ -2,6 +2,7 @@ package com.rating.rating.service;
 
 import java.text.DecimalFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,8 +25,8 @@ public class RatingServiceImpl implements RatingService {
 	
 	@Override
 	public float getAggregatedRatingUserByUserId(int userId) {
-		Optional<UserRating> optionalUserRating=userRatingRepository.findByUserId(userId);
-		if(optionalUserRating.isPresent()) {
+        List<UserRating> userRatingList=userRatingRepository.findByUserId(userId);
+		if(userRatingList.size()!=0) {
 			DecimalFormat df = new DecimalFormat("#.00");  
 			return  Float.valueOf(df.format(userRatingRepository.findAverageRatingOfUser(userId)));
 		}

@@ -1,5 +1,6 @@
 package com.rating.rating.repository;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.Query;
@@ -14,6 +15,6 @@ public interface UserRatingRepository extends PagingAndSortingRepository<UserRat
 	@Query("SELECT AVG(ur.rating) FROM UserRating ur WHERE ur.user.id = ?1") 
 	float findAverageRatingOfUser(int userId);
 
-	Optional<UserRating> findByUserId(int userId);
+	List<UserRating> findByUserId(int userId);
 
 }
