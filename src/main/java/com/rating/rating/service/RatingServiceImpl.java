@@ -24,14 +24,14 @@ public class RatingServiceImpl implements RatingService {
 	
 	@Override
 	public float getAggregatedRatingUserByUserId(int userId) {
-		Optional<User> optionalUser=userRepository.findById(userId);
-		if(optionalUser.isPresent()) {
+		Optional<UserRating> optionalUserRating=userRatingRepository.findByUserId(userId);
+		if(optionalUserRating.isPresent()) {
 			DecimalFormat df = new DecimalFormat("#.00");  
 			return  Float.valueOf(df.format(userRatingRepository.findAverageRatingOfUser(userId)));
 		}
 		else {
 			//throw some exception
-			throw new ResourceNotFoundException("user", "id", userId);
+			throw new ResourceNotFoundException("user rating", "userId", userId);
 		}
 	}
 
