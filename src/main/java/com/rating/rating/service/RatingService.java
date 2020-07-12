@@ -9,6 +9,7 @@ public interface RatingService {
 
 	float getAggregatedRatingUserByUserId(int userId);
 
+	
 	UserRating createUserRatingRecord(int rating, int userId);
 
 }
