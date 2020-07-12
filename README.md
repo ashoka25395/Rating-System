@@ -17,13 +17,13 @@ EX.http://localhost:8080/ratingsystem/api/aggregatedRating/?userId=3
 URL:http://localhost:8080/ratingsystem/api/createUserRatingRecord/
 Method Type:POST
 Request Params:rating and userId
-EX. http://localhost:8080/ratingsystem/api/createUserRatingRecord/?rating=2&userId=8
+EX. http://localhost:8080/ratingsystem/api/createUserRatingRecord/?rating=2&userId=3
 
 DB inital set up data:
 I have added the seed_data you just need to create the schema ratingsystem and just run the some sql statements which you can find in src/main/java/resources/seed_data and also change the datasource setting as per your db in application properties file.
 
 Steps to run the application:
 1.Just import the project in spring boot (version above 2.0)
-2.I assume you maven installed on your computer so just run command:
+2.I assume maven installed on your computer so just run command:
 mvn clean spring-boot:run 
 3.To test apis just use the postman 
