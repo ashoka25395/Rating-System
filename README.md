@@ -10,14 +10,14 @@ I am using two table one is user and other is user_rating.User will be different
 URL:http://localhost:8080/ratingsystem/api/aggregatedRating/
 Method Type:GET
 Request Params:userId
-EX.http://localhost:8080/ratingsystem/api/aggregatedRating/?userId=3
+e.g-http://localhost:8080/ratingsystem/api/aggregatedRating/?userId=3
 
 
 1.Api to rate user (work for both driver or passenger as i am taking user type in user)
 URL:http://localhost:8080/ratingsystem/api/createUserRatingRecord/
 Method Type:POST
 Request Params:rating and userId
-EX. http://localhost:8080/ratingsystem/api/createUserRatingRecord/?rating=2&userId=3
+e.g- http://localhost:8080/ratingsystem/api/createUserRatingRecord/?rating=2&userId=3
 
 DB inital set up data:
 I have added the seed_data you just need to create the schema ratingsystem and just run the some sql statements which you can find in src/main/java/resources/seed_data and also change the datasource setting as per your db in application properties file.
